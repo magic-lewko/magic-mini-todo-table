@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // Konsolowy dostep do ticketow - wygodne dla Claude Code i do szybkich zmian z terminala.
 //
-//   node jira.mjs lista [status]
-//   node jira.mjs pokaz SMD-1
-//   node jira.mjs nowy "Tytul" [--opis "tresc"] [--priorytet wysoki] [--etykiety fronty,ui]
-//   node jira.mjs komentarz SMD-1 "tresc"        (bez tresci czyta ze stdin)
-//   node jira.mjs status SMD-1 zrobione
+//   node todo.mjs lista [status]
+//   node todo.mjs pokaz TASK-1
+//   node todo.mjs nowy "Tytul" [--opis "tresc"] [--priorytet wysoki] [--etykiety ui,pilne]
+//   node todo.mjs komentarz TASK-1 "tresc"        (bez tresci czyta ze stdin)
+//   node todo.mjs status TASK-1 zrobione
 
 import { wszystkie, pobierz, utworz, dodajKomentarz, zapiszNaDysk, STATUSY, PRIORYTETY } from './lib/tickety.mjs'
 

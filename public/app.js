@@ -364,7 +364,7 @@ function formularz({ ticket, naZapis, tytulSekcji }) {
   const etykiety = document.createElement('input')
   etykiety.type = 'text'
   etykiety.value = (ticket.etykiety || []).join(', ')
-  etykiety.placeholder = 'etykiety po przecinku, np. fronty, ui'
+  etykiety.placeholder = 'etykiety po przecinku, np. ui, pilne'
 
   const opis = document.createElement('textarea')
   opis.value = ticket.opis || ''
@@ -509,7 +509,7 @@ function rysujTicket() {
 
   const autor = document.createElement('input')
   autor.type = 'text'
-  autor.value = localStorage.getItem('autor') || 'Mateusz'
+  autor.value = localStorage.getItem('autor') || 'ja'
   autor.size = 12
 
   const wyslij = document.createElement('button')

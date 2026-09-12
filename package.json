@@ -1,11 +1,11 @@
 {
-  "name": "mini-jira",
+  "name": "magic-mini-todo-table",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Minimalny tracker ticketow na plikach .md. Zero zaleznosci.",
   "scripts": {
     "start": "node serwer.mjs",
-    "jira": "node jira.mjs"
+    "todo": "node todo.mjs"
   }
 }

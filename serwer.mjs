@@ -161,5 +161,5 @@ const serwer = createServer(async (req, res) => {
 })
 
 serwer.listen(PORT, '127.0.0.1', () => {
-  console.log(`mini-jira: http://localhost:${PORT}`)
+  console.log(`magic-mini-todo-table: http://localhost:${PORT}`)
 })
