@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mini-jira</title>
+    <link rel="stylesheet" href="/styl.css" />
+  </head>
+  <body>
+    <header>
+      <strong>mini-jira</strong>
+      <input id="szukaj" type="search" placeholder="szukaj..." autocomplete="off" />
+      <span class="podpowiedz" id="licznik"></span>
+      <button id="nowy" type="button">+ nowy ticket</button>
+    </header>
+
+    <main>
+      <section id="tablica" aria-label="Tablica ticketow"></section>
+      <section id="szczegoly" aria-label="Szczegoly ticketu" hidden></section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

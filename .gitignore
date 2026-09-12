@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+
+# Tresc jest prywatna - do repozytorium ida tylko narzedzia, nie zadania.
+tickety/*.md
+tickety/zalaczniki/*
+!tickety/zalaczniki/.gitkeep

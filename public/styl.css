@@ -1,0 +1,312 @@
+/* Turbo minimalizm: bez cieni, bez zaokraglen, bez animacji. Tekst i kreski. */
+
+:root {
+  --tlo: #ffffff;
+  --tekst: #111111;
+  --slaby: #666666;
+  --kreska: #d4d4d4;
+  --zaznaczenie: #f2f2f2;
+  --akcent: #0000cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tlo: #101010;
+    --tekst: #e8e8e8;
+    --slaby: #999999;
+    --kreska: #333333;
+    --zaznaczenie: #1c1c1c;
+    --akcent: #8ab4ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* #tablica ma display:grid, wiec sam atrybut hidden by nie wystarczyl */
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--tlo);
+  color: var(--tekst);
+  font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--kreska);
+}
+
+header strong {
+  letter-spacing: 1px;
+}
+
+header .podpowiedz {
+  margin-right: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--tlo);
+  border: 1px solid var(--kreska);
+  padding: 3px 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--zaznaczenie);
+}
+
+input[type='search'] {
+  min-width: 180px;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+main > section {
+  flex: 1;
+  min-height: 0;
+}
+
+/* --- tablica --- */
+
+#tablica {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.kolumna {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-right: 1px solid var(--kreska);
+}
+
+.kolumna:last-child {
+  border-right: 0;
+}
+
+.kolumna h2 {
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--slaby);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--kreska);
+  background: var(--zaznaczenie);
+}
+
+.karty {
+  overflow: auto;
+  flex: 1;
+}
+
+.karta {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--kreska);
+  cursor: pointer;
+}
+
+.karta:hover,
+.karta:focus {
+  background: var(--zaznaczenie);
+  outline: 0;
+}
+
+.karta .gora {
+  font-size: 12px;
+  color: var(--slaby);
+}
+
+.karta .tytul {
+  margin: 2px 0 4px;
+  overflow-wrap: anywhere;
+}
+
+.karta .dol {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 22px;
+}
+
+.karta .dalej {
+  font-size: 12px;
+  padding: 0 6px;
+  margin-left: auto;
+}
+
+/* --- ekran ticketu --- */
+
+#szczegoly {
+  overflow: auto;
+  padding: 16px 20px;
+}
+
+.pusto {
+  color: var(--slaby);
+  padding: 8px 10px;
+  margin: 0;
+}
+
+.znacznik {
+  border: 1px solid var(--kreska);
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--slaby);
+}
+
+.pasek {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.pasek .id {
+  color: var(--slaby);
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.tresc {
+  border-top: 1px solid var(--kreska);
+  padding-top: 12px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  max-width: 80ch;
+}
+
+.tresc img {
+  max-width: 100%;
+  border: 1px solid var(--kreska);
+  display: block;
+  margin: 8px 0;
+}
+
+.tresc pre {
+  background: var(--zaznaczenie);
+  padding: 8px;
+  overflow: auto;
+}
+
+.tresc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+.tresc blockquote {
+  margin: 8px 0;
+  padding-left: 10px;
+  border-left: 2px solid var(--kreska);
+  color: var(--slaby);
+}
+
+.tresc h2 {
+  font-size: 16px;
+}
+
+.tresc h3 {
+  font-size: 14px;
+}
+
+.tresc a {
+  color: var(--akcent);
+}
+
+.tresc.bez-kreski {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.naglowek-komentarzy {
+  font-size: 14px;
+  margin: 24px 0 0;
+}
+
+.komentarz {
+  border-top: 1px solid var(--kreska);
+  padding: 10px 0;
+  max-width: 80ch;
+}
+
+.komentarz .kto {
+  font-size: 12px;
+  color: var(--slaby);
+  margin-bottom: 4px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 80ch;
+  min-height: 160px;
+  resize: vertical;
+}
+
+textarea.niski {
+  min-height: 90px;
+}
+
+.formularz {
+  display: grid;
+  gap: 8px;
+  max-width: 80ch;
+}
+
+.podpowiedz {
+  color: var(--slaby);
+  font-size: 12px;
+  margin: 0;
+}
+
+.grupa {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  #tablica {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+  .kolumna {
+    border-right: 0;
+    border-bottom: 1px solid var(--kreska);
+  }
+  .karty {
+    overflow: visible;
+  }
+}
